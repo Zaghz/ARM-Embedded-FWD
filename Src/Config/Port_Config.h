@@ -2,68 +2,39 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Port_Driver.h
+ *         File:  <Write File Name>
  *       Module:  -
  *
  *  Description:  <Write File DESCRIPTION here>     
  *  
  *********************************************************************************************************************/
-#ifndef Port_Driver_H
-#define Port_Driver_H
+#ifndef Port_Config_H
+#define Port_Config_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-#include <stdint.h>
-#include <stdio.h>
+#include "../Mcal/Inc/Port_Driver.h"
+
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
+static Port_Config_t Ports[] = {
+    {PORTA_0,GPIO_OUTPUT,DIO,OPEN_DRAIN,EIGHT},
+    {PORTA_1,GPIO_OUTPUT,DIO,INTERNAL_PULLDOWN,FOUR},
+};
 
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/
 
+
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
-typedef Dio_Channel_t Port_Pin_t;
 
-typedef enum
-{
-    GPIO_INPUT,
-    GPIO_OUTPUT,
-} Port_PinDirection_t;
 
-typedef enum
-{
-    DIO,
-    ADC,
-} Port_PinMode_t;
-
-typedef enum
-{
-    INTERNAL_PULLUP,
-    INTERNAL_PULLDOWN,
-    OPEN_DRAIN,
-} Port_PinInternalAttach_t;
-
-typedef enum
-{
-    TWO,
-    FOUR,
-    EIGHT,
-} Port_PinOutputCurrent_t;
-
-typedef struct
-{
-    Port_Pin_t PortPin;
-    Port_PinDirection_t PortPinDirection;
-    Port_PinMode_t PortPinMode;
-    Port_PinInternalAttach_t PortPinInternalAttach;
-    Port_PinOutputCurrent_t Port_PinOutputCurrent;
-} Port_Config_t;
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
@@ -72,10 +43,10 @@ typedef struct
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
-void Port_Init(const Port_Config_t* ConfigPtr, size_t ConfigSize);
 
-#endif  /* Port_Driver_H */
+ 
+#endif  /* Port_Config_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: Port_Driver.h
+ *  END OF FILE: Std_Types.h
  *********************************************************************************************************************/

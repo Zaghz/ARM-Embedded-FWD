@@ -50,7 +50,6 @@ typedef struct {
  *********************************************************************************************************************/
 #define BITBAND_PERI_REF 0x40000000
 #define BITBAND_PERI_BASE 0x42000000
-#define BITBAND_PERI(a,b)  ((BITBAND_PERI_BASE + (a - BITBAND_PERI_REF) * 32 + (b * 4)))
 #define CORTEXM4_PERIPHERAL_BASE_ADDRESS 0x400FE000
 #define RCC *((volatile uint32_t*)(CORTEXM4_PERIPHERAL_BASE_ADDRESS+0x060))
 #define RCGCGPIO *((volatile uint32_t*)(CORTEXM4_PERIPHERAL_BASE_ADDRESS+0x608))
@@ -69,7 +68,11 @@ typedef struct {
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/
-
+#define bitset(byte,nbit)   ((byte) |=  (1<<(nbit)))
+#define bitclear(byte,nbit) ((byte) &= ~(1<<(nbit)))
+#define bitflip(byte,nbit)  ((byte) ^=  (1<<(nbit)))
+#define bitcheck(byte,nbit) ((byte) &   (1<<(nbit)))
+#define BITBAND_PERI(a,b)  ((BITBAND_PERI_BASE + (a - BITBAND_PERI_REF) * 32 + (b * 4)))
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
