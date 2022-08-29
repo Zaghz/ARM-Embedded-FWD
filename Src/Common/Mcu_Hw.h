@@ -45,11 +45,20 @@ typedef struct {
   uint32_t  ADCCTL;       
   uint32_t  DMACTL; 
 } GPIO_Type;
+
+typedef struct
+{
+    uint32_t CTRL;
+    uint32_t LOAD;
+    uint32_t VAL;
+    uint32_t CALIB;
+} SysTick_Type;
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 #define BITBAND_PERI_REF 0x40000000
 #define BITBAND_PERI_BASE 0x42000000
+#define SCS_BASE 0xE000E000
 #define CORTEXM4_PERIPHERAL_BASE_ADDRESS 0x400FE000
 #define RCC *((volatile uint32_t*)(CORTEXM4_PERIPHERAL_BASE_ADDRESS+0x060))
 #define RCGCGPIO *((volatile uint32_t*)(CORTEXM4_PERIPHERAL_BASE_ADDRESS+0x608))
@@ -65,6 +74,8 @@ typedef struct {
 #define GPIOD ((GPIO_Type*) GPIOD_APB_BASE)
 #define GPIOE ((GPIO_Type*) GPIOE_APB_BASE)
 #define GPIOF ((GPIO_Type*) GPIOF_APB_BASE)
+#define SysTick_BASE SCS_BASE +  0x0010
+#define SysTick ((SysTick_Type*) SysTick_BASE)
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/

@@ -2,6 +2,7 @@
 #include "Mcu_Hw.h"
 #include "Dio.h"
 #include "Port_Config.h"
+// #include "TM4C123GH6PM.h"
 //void delayms(int time);
 
 //void delayms(int time){
@@ -13,17 +14,19 @@
 //}
 
 int main(){
-	RCC |= 0x02400540;
-	Port_Init(Ports,sizeof(Ports)/sizeof(Ports[0]));
+//	RCC |= 0x02400540;
+//	Port_Init(Ports,sizeof(Ports)/sizeof(Ports[0]));
 	// RCGCGPIO |= 0x02;
 	// GPIOA->DIR |= 0x02;
 	GPIOB->DEN |= 0x02;
+
+	// SysTick->LOAD = 15999999;
 	while (1)
 	{
 		// Dio_ReadChannel(PORTA_1);
 		// Dio_WriteChannel(PORTA_1,GPIO_HIGH);
 		// Dio_WriteChannel(PORTA_1,GPIO_LOW);
-		Dio_WritePort(PORTA,0xFF);
+//		Dio_WritePort(PORTA,0xFF);
 		GPIOA->DATA = 0x01;
 	}
 	
