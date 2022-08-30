@@ -74,7 +74,7 @@ typedef struct
 #define GPIOD ((GPIO_Type*) GPIOD_APB_BASE)
 #define GPIOE ((GPIO_Type*) GPIOE_APB_BASE)
 #define GPIOF ((GPIO_Type*) GPIOF_APB_BASE)
-#define SysTick_BASE SCS_BASE +  0x0010
+#define SysTick_BASE (SCS_BASE +  0x0010)
 #define SysTick ((SysTick_Type*) SysTick_BASE)
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
