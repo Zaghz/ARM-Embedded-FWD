@@ -2,9 +2,10 @@
  *  FILE DESCRIPTION
  *  -----------------------------------------------------------------------------------------------------------------*/
 /**        \file  Interrupt_Config.c
- *        \brief  
+ *        \brief  Comfiguration for interrupts.
  *
- *      \details  
+ *      \details  Add more entries to the struct array to enable additional iterrupts and change the size of the array
+ * in the header file.
  *
  *
  *********************************************************************************************************************/
@@ -27,10 +28,10 @@
 /**********************************************************************************************************************
  *  GLOBAL DATA
  *********************************************************************************************************************/
-Interrupt_Config_t InterruptConfig[] =
+const Interrupt_Config_t InterruptConfig[] =
 {
-    {GPIOA_INTn,1,0},
-    {GPIOB_INTn,1,0}
+    {GPIOA_INTn,4,1},
+    {GPIOB_INTn,3,2}
 };
 /**********************************************************************************************************************
  *  LOCAL FUNCTION PROTOTYPES
@@ -45,20 +46,7 @@ Interrupt_Config_t InterruptConfig[] =
  *********************************************************************************************************************/
 
 
-/******************************************************************************
-* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
-* \Description     : Describe this service                                    
-*                                                                             
-* \Sync\Async      : Synchronous                                               
-* \Reentrancy      : Non Reentrant                                             
-* \Parameters (in) : parameterName   Parameter Describtion                     
-* \Parameters (out): None                                                      
-* \Return value:   : Std_ReturnType  E_OK
-*                                    E_NOT_OK                                  
-*******************************************************************************/
-
-
 
 /**********************************************************************************************************************
- *  END OF FILE: Interrupts.c
+ *  END OF FILE: Interrupt_Config.c
  *********************************************************************************************************************/

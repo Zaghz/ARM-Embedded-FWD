@@ -5,7 +5,7 @@
  *         File:  Port_Driver.h
  *       Module:  -
  *
- *  Description:  <Write File DESCRIPTION here>     
+ *  Description:  Different Pin types and pin initialization function definition.     
  *  
  *********************************************************************************************************************/
 #ifndef Port_Driver_H

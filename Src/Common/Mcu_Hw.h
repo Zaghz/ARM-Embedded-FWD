@@ -5,7 +5,7 @@
  *         File:  Mcu_Hw.h
  *       Module:  -
  *
- *  Description:  <Write File DESCRIPTION here>     
+ *  Description:  <This file contains all the definitions of the Tiva C hardware registers.>     
  *  
  *********************************************************************************************************************/
 #ifndef Mcu_Hw_H
@@ -100,26 +100,34 @@ typedef struct
  *********************************************************************************************************************/
 #define BITBAND_PERI_REF 0x40000000
 #define BITBAND_PERI_BASE 0x42000000
+
 #define SCS_BASE 0xE000E000
+
 #define CORTEXM4_PERIPHERAL_BASE_ADDRESS 0x400FE000
+
 #define RCC *((volatile uint32_t*)(CORTEXM4_PERIPHERAL_BASE_ADDRESS+0x060))
 #define RCGCGPIO *((volatile uint32_t*)(CORTEXM4_PERIPHERAL_BASE_ADDRESS+0x608))
+
 #define GPIOA_APB_BASE 0x40004000
 #define GPIOB_APB_BASE 0x40005000
 #define GPIOC_APB_BASE 0x40006000
 #define GPIOD_APB_BASE 0x40007000
 #define GPIOE_APB_BASE 0x40024000
 #define GPIOF_APB_BASE 0x40025000
+
 #define GPIOA ((GPIO_Type*) GPIOA_APB_BASE)
 #define GPIOB ((GPIO_Type*) GPIOB_APB_BASE)
 #define GPIOC ((GPIO_Type*) GPIOC_APB_BASE)
 #define GPIOD ((GPIO_Type*) GPIOD_APB_BASE)
 #define GPIOE ((GPIO_Type*) GPIOE_APB_BASE)
 #define GPIOF ((GPIO_Type*) GPIOF_APB_BASE)
+
 #define SysTick_BASE (SCS_BASE +  0x0010)
 #define SysTick ((SysTick_Type*) SysTick_BASE)
+
 #define SCB_BASE (SCS_BASE + 0x0D00UL)
 #define SCB ((SCB_Type*) SCB_BASE)
+
 #define NVIC_BASE (SCS_BASE +  0x0100UL) 
 #define NVIC ((NVIC_Type*)NVIC_BASE)
 /**********************************************************************************************************************
@@ -129,6 +137,7 @@ typedef struct
 #define bitclear(byte,nbit) ((byte) &= ~(1<<(nbit)))
 #define bitflip(byte,nbit)  ((byte) ^=  (1<<(nbit)))
 #define bitcheck(byte,nbit) ((byte) &   (1<<(nbit)))
+
 #define BITBAND_PERI(a,b)  ((BITBAND_PERI_BASE + (a - BITBAND_PERI_REF) * 32 + (b * 4)))
 
 /**********************************************************************************************************************

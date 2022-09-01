@@ -2,6 +2,7 @@
 #include "Dio.h"
 #include "Port_Config.h"
 #include "SysTick_Timer.h"
+#include "Interrupts.h"
 
 uint8_t led_flag = 0;
 float on_time = 0.002f;
@@ -26,6 +27,7 @@ void Toggle_LED(float ON_Time, float OFF_Time, Port_Pin_t LED_Pin)
 }
 
 int main(){
+	IntCntrl_Init(4, 0);
 	Port_Init(Ports,sizeof(Ports)/sizeof(Ports[0]));
 	Toggle_LED(on_time,off_time,led_pin);
 	while (1)

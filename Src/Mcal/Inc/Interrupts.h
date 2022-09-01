@@ -5,7 +5,7 @@
  *         File:  Interrupts.h
  *       Module:  -
  *
- *  Description:  <Write File DESCRIPTION here>     
+ *  Description:  All interrupt numbers and interrupt init function definition.     
  *  
  *********************************************************************************************************************/
 #ifndef Interrupts_H

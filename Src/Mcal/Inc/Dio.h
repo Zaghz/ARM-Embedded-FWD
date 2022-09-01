@@ -5,7 +5,7 @@
  *         File:  Dio.h
  *       Module:  -
  *
- *  Description:  <Write File DESCRIPTION here>     
+ *  Description:  Digital I/O type and function definitions for output pin R/W operations.     
  *  
  *********************************************************************************************************************/
 #ifndef Dio_H

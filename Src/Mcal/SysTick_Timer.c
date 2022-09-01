@@ -43,14 +43,14 @@
 
 
 /******************************************************************************
-* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
+* \Syntax          : void SysTick_Init(float delay_in_seconds)       
 * \Description     : Describe this service                                    
 *                                                                             
 * \Sync\Async      : Synchronous                                               
 * \Reentrancy      : Non Reentrant                                             
 * \Parameters (in) : parameterName   Parameter Describtion                     
 * \Parameters (out): None                                                      
-* \Return value:   : Std_ReturnType  E_OK
+* \Return value:   : None  E_OK
 *                                    E_NOT_OK                                  
 *******************************************************************************/
 void SysTick_Init(float delay_in_seconds)

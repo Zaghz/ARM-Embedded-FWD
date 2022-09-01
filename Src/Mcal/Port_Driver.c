@@ -45,14 +45,14 @@
 
 
 /******************************************************************************
-* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
+* \Syntax          : void Port_Init(const Port_Config_t* ConfigPtr, size_t ConfigSize)
 * \Description     : Describe this service                                    
 *                                                                             
 * \Sync\Async      : Synchronous                                               
 * \Reentrancy      : Non Reentrant                                             
 * \Parameters (in) : parameterName   Parameter Describtion                     
 * \Parameters (out): None                                                      
-* \Return value:   : Std_ReturnType  E_OK
+* \Return value:   : None  E_OK
 *                                    E_NOT_OK                                  
 *******************************************************************************/
 

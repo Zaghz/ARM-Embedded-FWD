@@ -42,14 +42,14 @@
 
 
 /******************************************************************************
-* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
+* \Syntax          : Dio_Level_t Dio_ReadChannel(Dio_Channel_t channel)        
 * \Description     : Describe this service                                    
 *                                                                             
 * \Sync\Async      : Synchronous                                               
-* \Reentrancy      : Non Reentrant                                             
-* \Parameters (in) : parameterName   Parameter Describtion                     
+* \Reentrancy      : Reentrant                                             
+* \Parameters (in) : channel   Parameter Describtion                     
 * \Parameters (out): None                                                      
-* \Return value:   : Std_ReturnType  E_OK
+* \Return value:   : Dio_Level_t  E_OK
 *                                    E_NOT_OK                                  
 *******************************************************************************/
 Dio_Level_t Dio_ReadChannel(Dio_Channel_t channel)
@@ -130,6 +130,19 @@ Dio_Level_t Dio_ReadChannel(Dio_Channel_t channel)
         }
     }
 }
+
+/******************************************************************************
+* \Syntax          : void Dio_WriteChannel(Dio_Channel_t channel,Dio_Level_t level)        
+* \Description     : Describe this service                                    
+*                                                                             
+* \Sync\Async      : Synchronous                                               
+* \Reentrancy      : Reentrant                                             
+* \Parameters (in) : channel   Parameter Describtion   
+                     level                 
+* \Parameters (out): None                                                      
+* \Return value:   : None  E_OK
+*                                    E_NOT_OK                                  
+*******************************************************************************/
 
 void Dio_WriteChannel(Dio_Channel_t channel,Dio_Level_t level)
 {
@@ -222,6 +235,18 @@ void Dio_WriteChannel(Dio_Channel_t channel,Dio_Level_t level)
     }
 }
 
+/******************************************************************************
+* \Syntax          : Dio_PortLevel_t Dio_ReadPort(Dio_Port_t port)       
+* \Description     : Describe this service                                    
+*                                                                             
+* \Sync\Async      : Synchronous                                               
+* \Reentrancy      : Reentrant                                             
+* \Parameters (in) : port   Parameter Describtion                  
+* \Parameters (out): None                                                      
+* \Return value:   : Dio_PortLevel_t  E_OK
+*                                    E_NOT_OK                                  
+*******************************************************************************/
+
 Dio_PortLevel_t Dio_ReadPort(Dio_Port_t port)
 {
     if(port == 0)
@@ -249,6 +274,19 @@ Dio_PortLevel_t Dio_ReadPort(Dio_Port_t port)
         return (uint8_t)(GPIOF -> DATA);
     }
 }
+
+/******************************************************************************
+* \Syntax          : void Dio_WritePort(Dio_Port_t port,Dio_PortLevel_t portlevel)      
+* \Description     : Describe this service                                    
+*                                                                             
+* \Sync\Async      : Synchronous                                               
+* \Reentrancy      : Reentrant                                             
+* \Parameters (in) : port   Parameter Describtion     
+                     portlevel   
+* \Parameters (out): None                                                      
+* \Return value:   : None  E_OK
+*                                    E_NOT_OK                                  
+*******************************************************************************/
 
 void Dio_WritePort(Dio_Port_t port,Dio_PortLevel_t portlevel)
 {
@@ -278,10 +316,10 @@ void Dio_WritePort(Dio_Port_t port,Dio_PortLevel_t portlevel)
     }
 }
 
-Dio_Level_t Dio_FlipChannel(Dio_Channel_t channel)
-{
+// Dio_Level_t Dio_FlipChannel(Dio_Channel_t channel)
+// {
     
-}
+// }
 /**********************************************************************************************************************
  *  END OF FILE: Dio.c
  *********************************************************************************************************************/

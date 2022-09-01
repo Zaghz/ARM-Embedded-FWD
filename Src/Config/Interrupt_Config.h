@@ -5,7 +5,7 @@
  *         File:  Interrupt_Config_H
  *       Module:  -
  *
- *  Description:  <Write File DESCRIPTION here>     
+ *  Description:  <Definitions of the interrupt configuration types>     
  *  
  *********************************************************************************************************************/
 #ifndef Interrupt_Config_H
@@ -43,7 +43,8 @@ typedef struct
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
-extern const Interrupt_Config_t InterruptConfig[];
+#define NUM_INTERRUPTS 2
+extern const Interrupt_Config_t InterruptConfig[NUM_INTERRUPTS];
  
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
