@@ -53,6 +53,48 @@ typedef struct
     uint32_t VAL;
     uint32_t CALIB;
 } SysTick_Type;
+
+typedef struct
+{
+  uint32_t CPUID;
+  uint32_t ICSR;
+  uint32_t VTOR;
+  uint32_t AIRCR;
+  uint32_t SCR;
+  uint32_t CCR;
+  uint8_t  SHP[12U]; 
+  uint32_t SHCSR;
+  uint32_t CFSR;
+  uint32_t HFSR;
+  uint32_t DFSR;
+  uint32_t MMFAR;
+  uint32_t BFAR;
+  uint32_t AFSR;
+  uint32_t PFR[2U];
+  uint32_t DFR;
+  uint32_t ADR;
+  uint32_t MMFR[4U];
+  uint32_t ISAR[5U]; 
+  uint32_t RESERVED0[5U];
+  uint32_t CPACR;
+} SCB_Type;
+
+typedef struct
+{
+  uint32_t ISER[8U];       
+  uint32_t RESERVED0[24U];
+  uint32_t ICER[8U];       
+  uint32_t RESERVED1[24U];
+  uint32_t ISPR[8U];       
+  uint32_t RESERVED2[24U];
+  uint32_t ICPR[8U];       
+  uint32_t RESERVED3[24U];
+  uint32_t IABR[8U];       
+  uint32_t RESERVED4[56U];
+  uint8_t  IP[240U];       
+  uint32_t RESERVED5[644U]; 
+  uint32_t STIR;           
+}  NVIC_Type;
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
@@ -76,6 +118,10 @@ typedef struct
 #define GPIOF ((GPIO_Type*) GPIOF_APB_BASE)
 #define SysTick_BASE (SCS_BASE +  0x0010)
 #define SysTick ((SysTick_Type*) SysTick_BASE)
+#define SCB_BASE (SCS_BASE + 0x0D00UL)
+#define SCB ((SCB_Type*) SCB_BASE)
+#define NVIC_BASE (SCS_BASE +  0x0100UL) 
+#define NVIC ((NVIC_Type*)NVIC_BASE)
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
  *********************************************************************************************************************/
